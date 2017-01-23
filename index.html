@@ -20,6 +20,7 @@
     <!-- Custom styles for this template -->
     <link href="includes/css/carousel.css" rel="stylesheet">
     <link href='includes/css/custom.css' rel='stylesheet' type='text/css'>
+     <link href="includes/css/timeline.css" rel="stylesheet">
   </head>
 
 <!-- NAVBAR
@@ -125,7 +126,7 @@
           <p>Full Stack Web Development with JavaScript</p>
           <p>Master of Geo-Information Science and Earth Observation</p>
           <p>Bachelor of Environmental Science</p>
-          <p><a class="btn btn-default" href="#education" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="#educationandexperiences" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="includes/pic/experiences.jpg" width="140" height="140">
@@ -133,7 +134,7 @@
           <p>Project assistant in business consultancy company</p>
           <p>Marketing planning intern in e-commerce company</p>
           <p>EN-CN freelance translator</p>
-          <p><a class="btn btn-default" href="#experiences" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="#educationandexperiences" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -145,43 +146,80 @@
       <div class="row featurette">
         <div class="col-md-7">
         <p id="aboutxuan"></p>
-          <h2 class="featurette-heading">About Xuan <span class="text-muted">Lives in a global world.</span></h2>
+          <h2 class="featurette-heading">About Xuan <!-- <span class="text-muted">Lives in a global world.</span> --></h2>
           <p class="lead">I was born in a beautiful city called Guilin in the south of China. Everything changed since I came to Holland. I studied in the east of Holland and I love the small boarder city Enschede. Wonderful landscape and friendly people.</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive center-block" src="includes/pic/aboutxuan.png" alt="Generic placeholder image" width="500" height="500">
         </div>
       </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-        <p id="education"></p>
-          <h2 class="featurette-heading">Education <span class="text-muted">Hard working.</span> </h2>
-          <p class="lead">01.2017-03.2017: The New York and Code Design Academy; Full Stack Web Development with JavaScript.</p>
-          <p>09.2013-03.2015: University of Twente, The Netherlands; MSc.Geo-Information Science and Earth Observation.</p>
-          <p>09.2009-06.2013: Chongqing University, China; B.Eng. Environmental Science.</p>
+<!--timeline-->
+<div class="container">
+  <div class="page-header">
+  <p id="educationandexperiences"></p>
+    <h1 id="timeline">Education & Experiences</h1>
+  </div>
+  <ul class="timeline">
+    <li>
+      <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h4 class="timeline-title">Intensive JavaScript Training for web development</h4>
+          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 01.2017-03.2017</small></p>
         </div>
-        <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" src="includes/pic/programming.jpg" alt="Generic placeholder image" width="500" height="500">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-        <p id="experiences"></p>
-          <h2 class="featurette-heading">Experiences <span class="text-muted">Meet your needs.</span> </h2>
-          <p class="lead">[project] 07.2016-11.2016: Search European dry anaerobic technology for one of the biggest company in China on food waste treatment. </p>
-          <p class="lead">[Intership] 05.2016-08.2016: Business consultancy Intern at China Inroads, Utrecht, The Netherlands. Supported ongoing project/did market research/searched business partners/co-wrote article on environmental techniques/translated business contract and high-tech documents between EN and CN.</p>
-          <p class="lead">[Intership] 08.2015-01.2016: Marketing planning and product management in Holland at Home, Amsterdam, The Netherlands. Did market research/analyzed statistics in Google Analytics/managed soical media/managed product info in CRM database.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="includes/pic/marketing.jpg" alt="Generic placeholder image"  width="500" height="500">
+        <div class="timeline-body">
+          <p>The New York and Code Design Academy;BSSA</p>
         </div>
       </div>
+    </li>
+    <li class="timeline-inverted">
+      <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h4 class="timeline-title">Business Consultant Intern & Project Assistant</h4>
+          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 05.2016-11.2016</small></p>
+        </div>
+        <div class="timeline-body">
+          <p>Business consultancy Intern at China Inroads, Utrecht, The Netherlands. Supported ongoing project about searching European dry anaerobic technology for one of the biggest company in China on food waste treatment/did market research/searched business partners/co-wrote article on environmental techniques/translated business contract and high-tech documents between EN and CN.</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h4 class="timeline-title">Online Marketing Intern</h4>
+          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 08.2015-01.2016</small></p>
+        </div>
+        <div class="timeline-body">
+          <p>Marketing planning and product management in Holland at Home, Amsterdam, The Netherlands. Did market research/analyzed statistics in Google Analytics/managed soical media/managed product info in CRM database.</p>
+        </div>
+      </div>
+    </li>
+    <li class="timeline-inverted">
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h4 class="timeline-title">MSc.Geo-Information Science and Earth Observation</h4>
+          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 09.2013-03.2015</small></p>
+        </div>
+        <div class="timeline-body">
+          <p>University of Twente, The Netherlands.</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="timeline-badge info"><i class="glyphicon glyphicon-floppy-disk"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h4 class="timeline-title">B.Eng.Environmental Science</h4>
+           <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 09.2009-06.2013</small></p>
+        </div>
+        <div class="timeline-body">
+          <p>Chongqing University, China</p>
+          <hr>
+        </div>
+      </div>
+    </li>
 
       <!-- /END THE FEATURETTES -->
 
