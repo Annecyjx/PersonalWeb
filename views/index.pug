@@ -1,0 +1,284 @@
+html
+  head
+    title Xuan's Personal Site
+
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='https://fonts.googleapis.com/css?family=Chonburi', rel='stylesheet')
+
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(type='text/css' rel='stylesheet', href='/../css/style.css')
+    
+    script(type='text/javascript', src='/../js/jquery-3.1.1.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+
+  body
+    .navbar-wrapper
+      nav.navbar.navbar-inverse.navbar-static-top
+        .navbar-header
+            button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+            |  
+            a.navbar-brand(href='/home') Xuan Jiang-Pobre
+        #navbar.navbar-collapse.collapse
+            ul.nav.navbar-nav
+                li.active
+                  a(href='/home') Home
+                li
+                  a(href='#About') About
+                li
+                  a(href='#contact_form') Contact
+
+    div.panelCarousel
+        .container
+            #myCarousel.carousel.slide(data-ride='carousel')
+              ol.carousel-indicators
+                li.active(data-target='#myCarousel', data-slide-to='0')
+                li(data-target='#myCarousel', data-slide-to='1')
+                li(data-target='#myCarousel', data-slide-to='2')
+              .carousel-inner(role='listbox')
+                .item.active
+                  img(src='/../img/sun.jpg', alt='Utrecht Leidsche Rijn Station')
+                  .carousel-caption
+                    h3 Welcome!
+                    p Hi, I'm Xuan. I am young, passion and responsible web developer who lives in beautiful city Utrecht, The Netherlands.
+                .item
+                  img(src='/../img/desserts.jpg', alt='Utrecht Leidsche Rijn Cinemac')
+                  .carousel-caption
+                    h3 Cooking is amazing
+                    p One piece of home-made cheese cake after programming makes your life alive!
+                .item
+                  img(src='/../img/contact.jpg', alt='Utrecht Terwijde Winkel Centrum')
+                  .carousel-caption
+                    h3 Do not heisitate to contact me
+                    p Email: annecyjx@gmail.com
+              a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+                span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                |  
+                span.sr-only Previous
+              a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+                span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                |  
+                span.sr-only Next
+
+
+    div.panelGooglemaps#googleMap
+      |  &nbsp;     
+      script.
+        function initMap() {
+          var directionsDisplay = new google.maps.DirectionsRenderer;
+          var directionsService = new google.maps.DirectionsService;
+          // Create a map and center it on Leidsche Rijn station
+          var mapProp= {
+            center: new google.maps.LatLng(52.098884,5.065143),
+            zoom:9,
+          }      
+          var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+          directionsDisplay.setMap(map);
+            markerA = new google.maps.Marker({
+                position: new google.maps.LatLng(52.098884,5.065143),
+                title: 'Leidsche Rijn',
+                map:map
+          })
+        }
+
+    div.panelContact
+      form#contact_form.well.form-horizontal(action='/home ', method='post')
+        fieldset
+          legend Contact me Today!
+          .form-group
+            label.col-md-4.control-label First Name
+            .col-md-4.inputGroupContainer
+              .input-group
+                span.input-group-addon
+                  i.glyphicon.glyphicon-user
+                |  
+                input.form-control(name='first_name', placeholder='First Name', type='text')
+          .form-group
+            label.col-md-4.control-label Last Name
+            .col-md-4.inputGroupContainer
+              .input-group
+                span.input-group-addon
+                  i.glyphicon.glyphicon-user
+                |  
+                input.form-control(name='last_name', placeholder='Last Name', type='text')
+          .form-group
+            label.col-md-4.control-label E-Mail
+            .col-md-4.inputGroupContainer
+              .input-group
+                span.input-group-addon
+                  i.glyphicon.glyphicon-envelope
+                |  
+                input.form-control(name='email', placeholder='E-Mail Address', type='text')
+          .form-group
+            label.col-md-4.control-label Phone 
+            .col-md-4.inputGroupContainer
+              .input-group
+                span.input-group-addon
+                  i.glyphicon.glyphicon-earphone
+                |  
+                input.form-control(name='phone', placeholder='(31)555-333-222', type='text')
+          .form-group
+            label.col-md-4.control-label Message
+            .col-md-4.inputGroupContainer
+              .input-group
+                span.input-group-addon
+                  i.glyphicon.glyphicon-pencil
+                textarea.form-control(name='comment', placeholder='Message')
+          #success_message.alert.alert-success(role='alert')
+            | Success
+            i.glyphicon.glyphicon-thumbs-up
+            |  Thanks for contacting me, I will get back to you shortly.
+          .form-group
+            label.col-md-4.control-label
+            .col-md-4
+              button.btn.btn-warning(type='submit')
+                | Send
+                span.glyphicon.glyphicon-send
+
+    script.
+      $(document).ready(function() {
+        $('#contact_form').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            first_name: {
+                validators: {
+                        stringLength: {
+                        min: 2,
+                    },
+                        notEmpty: {
+                        message: 'Please supply your first name'
+                    }
+                }
+            },
+             last_name: {
+                validators: {
+                     stringLength: {
+                        min: 2,
+                    },
+                    notEmpty: {
+                        message: 'Please supply your last name'
+                    }
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please supply your email address'
+                    },
+                    emailAddress: {
+                        message: 'Please supply a valid email address'
+                    }
+                }
+            },
+            phone: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please supply your phone number'
+                    },
+                    phone: {
+                        country: 'US',
+                        message: 'Please supply a vaild phone number with area code'
+                    }
+                }
+            },
+            comment: {
+                validators: {
+                      stringLength: {
+                        min: 10,
+                        max: 200,
+                        message:'Please enter at least 10 characters and no more than 200'
+                    },
+                    notEmpty: {
+                        message: 'Please supply a message'
+                    }
+                    }
+                }
+            }
+        })
+        .on('success.form.bv', function(e) {
+            $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+                $('#contact_form').data('bootstrapValidator').resetForm();
+
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+
+            // Use Ajax to submit form data
+            $.post($form.attr('action'), $form.serialize(), function(result) {
+                console.log(result);
+            }, 'json');
+            });
+        });     
+
+    button#myBtn(onclick='topFunction()', title='Go to top') Top
+    script.
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("myBtn").style.display = "block";
+      } else {
+      document.getElementById("myBtn").style.display = "none";
+      }
+      }
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+      }
+
+    footer.footer-distributed
+      .footer-left
+        h3
+          img#logobottom(src='/../img/laptopicon.ico', alt='', width='120', hight='120')
+        br
+        br
+        p.footer-company-name Gather-Leidsche-Rijn &copy; 2017
+      .footer-center
+        div
+          i.fa.fa-map-marker
+          p
+            span Pieter d' Hontlaan
+            |  Utrecht, Netherlands
+        div
+          i.fa.fa-phone
+          p +316 59419239
+        div
+          i.fa.fa-envelope
+          p
+            a(href='mailto:annecyjx@gmail.com') annecyjx@gmail.com
+      .footer-right
+        p.footer-company-about
+          span About the webiste
+
+          |  This simple website was created by Xuan!
+
+        .footer-icons
+          a(href='#')
+            i.fa.fa-facebook
+          a(href='#')
+            i.fa.fa-twitter
+          a(href='#')
+            i.fa.fa-linkedin
+          a(href='#')
+            i.fa.fa-github
+
+  script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA9hyb7Hz8M7ZgAoJyXThHFx5951myltTI&callback=initMap')
+  //- script(src='https://code.jquery.com/jquery.js')
+  //- script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+  //- script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js')
+    
